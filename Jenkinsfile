@@ -1,11 +1,14 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('build'){
-                steps
-            {script{
-                bat 'docker build -t jafarsadiq1/node-js-app .'
-            }}
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build Docker image
+                    bat 'docker build -t jafarsadiq1/node-js-app .'
+                }
+            }
         }
     }
 }
